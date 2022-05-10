@@ -10,6 +10,7 @@ body {
     color: #222;
     overflow-x: hidden;
     padding: 0;
+    margin: 0;
 }
 
 .container {
@@ -40,6 +41,11 @@ body {
     transition: transform 500ms linear;
 }
 
+.container.show-nav .circle {
+    transform: rotate(-70deg);    
+}
+
+
 .circle button {
     cursor: pointer;
     position: absolute;
@@ -50,6 +56,11 @@ body {
     border: 0;
     font-size: 26px;
     color: #fff;
+    transition: color 0.5s;
+}
+
+.circle button:hover {
+    color: rgb(131, 30, 30);
 }
 
 .circle button:focus {
@@ -64,6 +75,66 @@ body {
     top: 60%;
     transform: rotate(90deg);
     transform-origin: top left;
+}
+
+.container.show-nav + nav li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+nav ul li {
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0px;
+    transition: transform 400ms ease-in;
+}
+
+nav ul li i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+nav ul li {
+    transform: translateX(-200%);
+}
+
+nav ul li + li {
+    margin-left: 15px;
+}
+
+nav ul li + li + li {
+    margin-left: 30px;
+}
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.content h1 {
+    margin: 0;
+}
+
+.content small {
+    color: #555555;
+    font-style: italic;
+}
+
+.content p {
+    color: #333;
+    line-height: 1.5;
 }
 
 .content img {
